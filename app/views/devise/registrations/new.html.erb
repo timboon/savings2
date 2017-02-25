@@ -1,0 +1,68 @@
+
+
+     <%= devise_error_messages! %>
+     
+<div class ="container">
+  <div class="row">
+      
+       <div class="col-xs-4 col-xs-offset-4 well">
+         <div class ="text-center"><h2>Sign up</h2></div>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true,class: 'form-control' %>
+          </div>
+         
+          <div class="field">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "off",class: 'form-control' %>
+          </div>
+          
+          <div class="field">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "off",class: 'form-control' %>
+          </div>
+          
+          <div class="field form-group">
+            <%= f.label "What are you saving for?" %><br />
+            <%= f.text_field :goal_title, autocomplete: "off", class: 'form-control' %>
+          </div>
+                  
+          <div class="field">
+            <%= f.label "How much are you trying to save?" %><br />
+            <%= f.number_field :goal, autocomplete: "off", class: 'form-control' %>
+          </div>
+
+          <div class="field">
+            <%= f.label "What date do you want to start saving?" %><br />
+            <%= f.date_field :start_date, autocomplete: "off", class: 'form-control' %>
+          </div>
+          
+          <div class="field">
+            <%= f.label "What is your goal date?" %><br />
+            <%= f.date_field :end_date, autocomplete: "off",class: 'form-control' %>
+            
+             <div class="actions text-center">
+            <br>
+            <%= f.submit "Sign up", class: 'btn btn-success'%>
+            <% end %>
+             </div>
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+

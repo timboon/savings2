@@ -1,0 +1,35 @@
+
+<% if user_signed_in? %>
+
+<div class="container">
+  <div class ="row">
+    <div class = "col-md-4 col-md-offset-4 text-center">
+      <h1 class="title-text">Current Progress</h1>
+      <br>
+      <h2 class="title-text">You are <%=number_to_percentage(@percent, precision: 1) %> towards <%=@goal_title%></h2>
+
+<div id="content">
+
+    <div id="thermo1" class="thermometer horizontal">
+
+        <div class="track">
+            <div class="goal">
+                <div class="amount"><%= @goal_amount%></div>
+            </div>
+            <div class="progress">
+                <div class="amount"><%= @progress%></div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+    </div>
+  </div>
+</div>
+
+<% else %>
+
+<%= render "new" %>
+
+<% end %>
