@@ -14566,20 +14566,7 @@ var o,i,s,a,u;return i=null!=n?n:{},a=i.restorationIdentifier,s=i.restorationDat
 
 
 }).call(this);
-$(document).on('turbolinks:load', function(){
-    
 
- $('.alert').delay(1000).fadeOut(4000);
- 
- 
-
-
-    alert("foo bar");
-
-
-
-});
-(function() {
 
 
 }).call(this);
