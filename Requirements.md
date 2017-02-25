@@ -23,4 +23,6 @@ class ChangeSavingstoDate < ActiveRecord::Migration[5.0]
   end
 end
     
-/railsapp/db/migrate/20170216092620_create_savings.rb
+/railsapp/db/migrate/20170216092620_create_savings.rb.
+
+20170221025052_change_savingsto_date.rb
