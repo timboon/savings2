@@ -36,7 +36,7 @@ def show
   #Convert the date into a string to parse
   #convert the string to UTC in milliseconds as per Java requirements
   for i in 0..@data_sorted.length-1
-    @data_sorted[i][0] = @data_sorted[i][0].strftime('%F')
+    #@data_sorted[i][0] = @data_sorted[i][0].strftime('%F')
    #@data_sorted[i][0] = @data_sorted[i][0].to_s
     @data_sorted[i][0] = Time.parse(@data_sorted[i][0]).utc.to_i*1000
   end
