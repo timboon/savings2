@@ -37,7 +37,7 @@ def show
   #convert the string to UTC in milliseconds as per Java requirements
   for i in 0..@data_sorted.length-1
     #@data_sorted[i][0] = @data_sorted[i][0].strftime('%F')
-   @data_sorted[i][0] = @data_sorted[i][0].to_s
+    #@data_sorted[i][0] = @data_sorted[i][0].to_s
     @data_sorted[i][0] = Time.parse(@data_sorted[i][0]).utc.to_i*1000
   end
   
@@ -48,8 +48,8 @@ def show
   end
   
   #date = Date.today.strftime('%F')
-  date = Date.today.strftime('%F')
-  current_date = Time.parse(date).to_s
+  date = Date.today.to_s
+  current_date = Time.parse(date)
   
   # Prepare highcharts with data from database
   @chart = LazyHighCharts::HighChart.new('graph') do |f|
