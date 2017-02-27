@@ -6,7 +6,7 @@
     <div class = "col-md-4 col-md-offset-4 text-center">
       <h1 class="title-text">Current Progress</h1>
       <br>
-      <% if  !(Saving.where(user_id: params[:user_id]).count.zero?) %>
+      <% if  !(Saving.where(user_id: current_user.id).count.zero?) %>
         <h2 class="title-text">You have saved $<%=@progress %> so far!</h2>
         <h2 class="title-text">That is <%=number_to_percentage(@percent, precision: 1) %> towards <%=@goal_title%>!</h2>
       <%else%>
