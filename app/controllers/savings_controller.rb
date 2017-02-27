@@ -33,23 +33,19 @@ def show
     @data_sorted[i][1] = var1 + var2
   end
   
-  #Convert the date into a string to parse
+
   #convert the string to UTC in milliseconds as per Java requirements
   for i in 0..@data_sorted.length-1
-    #@data_sorted[i][0] = @data_sorted[i][0].strftime('%F')
-    #@data_sorted[i][0] = @data_sorted[i][0].to_s
     @data_sorted[i][0] = Time.parse(@data_sorted[i][0]).utc.to_i*1000
   end
-  
+
   for i in 0..goal_array.length-1
-    #goal_array[i][0] = goal_array[i][0].strftime('%F')
-    
     goal_array[i][0] = Time.parse(goal_array[i][0]).utc.to_i*1000
   end
   
-  #date = Date.today.strftime('%F')
+
   date = Date.today.to_s
-  current_date = Time.parse(date)
+  current_date = Time.parse(date).utc.to_i*1000
   
   # Prepare highcharts with data from database
   @chart = LazyHighCharts::HighChart.new('graph') do |f|

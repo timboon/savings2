@@ -10,11 +10,12 @@ Things I still have to do
     
     @goal_data = Array.new(27) {|i| (i+1) * (@goal.last)/27}
     
+      #@data_sorted[i][0] = @data_sorted[i][0].strftime('%F')
+    #@data_sorted[i][0] = @data_sorted[i][0].to_s
   
-  
 
 
-
+ heroku pg:reset DATABASE
 
 class ChangeSavingstoDate < ActiveRecord::Migration[5.0]
   def change
