@@ -111,11 +111,9 @@ def new
   
   
   @user = User.find( params[:user_id] )
-  # weeks_year=Date.parse(params[:saving][:week]).strftime("%U")
   
   @saving = @user.saving.build( saving_params )
-  #@saving = @user.saving.build( saving_params.merge(:week => weeks_year))
-  
+ 
   respond_to do |format|
     if @saving.save
     format.html { redirect_to root_path, notice: 'Saving was successfully created.' }
